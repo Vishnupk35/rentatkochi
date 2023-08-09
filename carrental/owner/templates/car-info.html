@@ -1,0 +1,71 @@
+{%extends 'base1.html'%} {%block body%}
+<!-- Content wrapper -->
+<div class="content-wrapper">
+  <!-- Content -->
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">
+      <span class="text-muted fw-light">Cars /</span> {{car.name}}
+    </h4>
+    <div class="box_provider">
+      <div class="row">
+        <div class="col mb-3">
+          <label for="nameLarge" class="form-label">Car Name</label>
+          <p>{{car.name}}</p>
+        </div>
+        <div class="col mb-3">
+          <label for="brand" class="form-label">Brand Name</label>
+          <p>{{car.brand}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="car-price" class="form-label"
+            >Car rent / day in INR</label
+          >
+          <p>{{car.price}}</p>
+        </div>
+        <div class="col mb-3">
+          <label for="car-transmission" class="form-label">Transmission</label>
+          <p>{{car.transmission}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="car-capacity" class="form-label">Car capacity</label>
+          <p>{{car.capacity}}</p>
+        </div>
+        <div class="col mb-3">
+          <label for="car-color" class="form-label">Car Color</label>
+          <p>{{car.color}}</p>
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col mb-0">
+          <label for="description" class="form-label">Description</label>
+          <p>{{car.description}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="car-fuel" class="form-label">Car Fuel</label>
+          <p>{{car.fuel}}</p>
+        </div>
+        <div class="col mb-3">
+          <label for="car-feature" class="form-label">Car Feature</label>
+          {% for car_feature in  car.features.all %} <p>{{car_feature.name}}</p> {% endfor %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="car-mileage" class="form-label">Mileage / litre</label>
+          <p>{{car.mileage}}</p>
+        </div>
+        <div class="col mb-3">
+          <label for="car-status" class="form-label">Status</label>
+          <p>{{car.status}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}
